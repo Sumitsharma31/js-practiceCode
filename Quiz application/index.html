@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body class="body">
+    <div class="spinner-border text-dark" id="spinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    <div class="uiContent">
+
+   
+    <header>
+        <div class="title">
+            <h1>Quiz Application UI</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mainSection">
+
+
+            <p id="mainTitle">Quiz Title</p>
+            <div class="quizSection ">
+
+
+                <div class="quizContent" >
+                    
+
+
+                    <div class="quizQuestion" >
+                        
+                        <p><b>Question <span id="slNo"></span></b></p>
+                      <div class="question">
+                        <p id="question"></p>
+                      </div>
+                    </div>
+                    <div class="options">
+                        <div class="quizoption option-group">
+                            
+                        </div>
+                    </div>
+                    <div class="btnSection ">
+                        <button id="prevBtn" onclick="previewElement(this)">Prev</button>
+                        <button id="nextBtn" disabled type="button" onclick="nextQuestion(this)">Next</button>
+                        <button id="submitBtn"  type="button" class="d-none" onclick="submitResult(this)">Submit</button>
+                    </div>
+
+
+                </div>
+                <div class="quizDetails" id="quizDetails">
+                    <p id="Questions">Question
+                        <span id="questionDetails">1</span><span>/</span><span id="total"></span></p>
+                        <div id="circleBox">
+
+                        </div>
+                </div>
+
+            </div>
+            <div id="resultSection" class="d-none">
+                <p >Correct Answer :<span id="correct"></span></p>
+                <p>Wrong Answer :<span id="wrong"></span></p>
+                <p id="message"></p>
+             </div>
+        </div>
+        
+    </main>
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
