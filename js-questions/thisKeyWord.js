@@ -1,5 +1,14 @@
-function doSomething() {
-    console.log(this);
-  }
+// function doSomething() {
+//     console.log(this);
+//   }
      
-  doSomething();
+//   doSomething();
+
+let obj = {
+    name:  "Sumit",
+    getName: function(){
+    console.log(this.name);
+  }
+}
+   
+obj.getName();
