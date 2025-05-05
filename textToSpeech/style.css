@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutUq-QRLeof9NcnMd4ntzLPVhfEMUtWudFA&s);
-    background-attachment: fixed;
+    background-image: rgba(117, 115, 115, 0.561);
 }
 .box{
     border: 2px solid black;
