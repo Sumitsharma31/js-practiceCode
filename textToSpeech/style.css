@@ -26,6 +26,6 @@ body{
     min-height: 150px;
 }
 #btn{
-    padding: 10px 30px;
+    padding: 1rem 3rem;
     background-color: azure;
 }

@@ -1,15 +1,41 @@
-let inputText=document.getElementById("inputText");
+// Function to populate voices in the dropdown
+function populateVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    const select = document.getElementById("voiceSelect");
 
+    select.innerHTML = '<option value="">Select a Voice</option>'; // Clear previous options
 
-function speechFun() {
-    // console.log("function executed");
-    
-    let text=inputText.value;
-    // console.log(text);
-    
-    const voice=new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(voice);
+    voices.forEach((voice, index) => {
+        const option = new Option(`${voice.name} (${voice.lang})`, index);
+        select.add(option);
+    });
 }
+
+// Event listener to populate voices when they are loaded
+window.speechSynthesis.onvoiceschanged = populateVoices;
+
+// Function to speak text in the selected voice
+function speechText() {
+    const text = document.getElementById("textToSpeak").value;
+    const select = document.getElementById("voiceSelect");
+    const voices = window.speechSynthesis.getVoices();
+    
+    if (!text) {
+        alert("Please enter text to speak.");
+        return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    
+    if (select.value) {
+        utterance.voice = voices[select.value]; // Set selected voice
+    }
+
+    window.speechSynthesis.speak(utterance);
+}
+
+// Call function to populate voices initially
+populateVoices();
 
 
 // const inputText = document.getElementById('inputText');
