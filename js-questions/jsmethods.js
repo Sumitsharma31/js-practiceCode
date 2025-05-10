@@ -30,3 +30,14 @@ console.log(findLargeNumberOfArray(array));
 const array = [12, 15, 41, 12, 24, 31, 8];
 const largest = Math.max(...array);
 console.log("Largest number:", largest); 
+
+
+
+//using for each method
+let max = array[0];
+array.forEach(num => {
+  if (num > max) {
+    max = num;
+  }
+});
+console.log("Largest number:", max); 
