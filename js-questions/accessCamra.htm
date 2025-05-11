@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Camera & Microphone Access</title>
+</head>
+<body>
+  <h2>Camera Stream</h2>
+  <video id="video" autoplay playsinline width="500"></video>
+
+  <script>
+    const video = document.getElementById("video");
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then((stream) => {
+        console.log("Permission granted");
+        video.srcObject = stream; // Attach the stream to the video element
+      })
+      .catch((err) => {
+        console.error("Permission denied or error:", err);
+        alert("Camera/Microphone access denied or error occurred.");
+      });
+  </script>
+</body>
+</html>
