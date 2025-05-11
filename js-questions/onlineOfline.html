@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online/Offline Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: rgb(158, 165, 165);
+    }
+    #status {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .online {
+      color: green;
+    }
+    .offline {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="status">Checking connection...</h1>
+
+  <script>
+    const statusEl = document.getElementById("status");
+
+    function updateStatus() {
+      if (navigator.onLine) {
+        statusEl.textContent = "✅ You are online";
+        statusEl.className = "online";
+      } else {
+        statusEl.textContent = "❌ You are offline";
+        statusEl.className = "offline";
+      }
+    }
+
+    // Run on page load
+    updateStatus();
+
+    // Listen for changes
+    window.addEventListener("online", updateStatus);
+    window.addEventListener("offline", updateStatus);
+  </script>
+</body>
+</html>
