@@ -10,7 +10,7 @@
   <script>
     const video = document.getElementById("video");
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
       .then((stream) => {
         console.log("Permission granted");
         video.srcObject = stream; // Attach the stream to the video element
