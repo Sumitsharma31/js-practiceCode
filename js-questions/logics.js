@@ -33,9 +33,19 @@
 
 
 // Array DeStructuring
-const array=["name1","name2"];
-const [n1,n2]=array;
-console.log(n1);
-console.log(n2);
 
 
+// const array=["name1","name2"];
+// const [n1,n2]=array;
+// console.log(n1);
+// console.log(n2);
+
+
+let a = {};
+let b = { key: "b" };
+let c = { key: "c" };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
