@@ -12,11 +12,15 @@
 
 
   <script>
+    const age=5
     try {
-  adddlert("Welcome guest!");   //addlert nothing just error for creation that is alert
+   age=10;
+  // adddlert("Welcome guest!");  
+
+   //addlert nothing just error for creation that is alert
 }
 catch(err) {
-  document.getElementById("demo").innerHTML = err.message;
+  document.getElementById("demo").innerHTML = `${err.name} : ${ err.message}`;
 }
   </script>
   
