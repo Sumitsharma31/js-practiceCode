@@ -1,3 +1,4 @@
+//with execution blocking 
 async function fetchData() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
@@ -9,3 +10,11 @@ async function fetchData() {
 }
 
 fetchData();
+
+//without blocking execution
+async function getUserData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await response.json();
+    console.log(users);
+}
+getUserData();
